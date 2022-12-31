@@ -1,0 +1,1 @@
+cat pF.scan |while read i; do bidsc=`echo $i|cut -d, -f1,2`; gid=`echo $i|cut -d, -f3`; gn=`grep "$gid" list0923.add.name_unified.csv|cut -d, -f6`; c1=`grep -w "$gn" list0923.add.name_unified.csv |cut -d, -f1|sort|uniq|wc -l`;c2=`grep -w "$gn" list0923.add.name_unified.csv |wc -l`; echo "$i,$gn,$c1,$c2" >> pF.check;done
